@@ -1,7 +1,7 @@
 provider "aws" {
   access_key = "${var.accessKey}"
   secret_key = "${var.secretAccessKey}"
-  region     = "us-west-1"
+  region     = "us-east-1"
 }
 
 data "aws_availability_zones" "all" {}

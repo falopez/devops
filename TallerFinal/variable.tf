@@ -3,7 +3,7 @@ variable "contador" {
   }
 variable "region" {
   description = "AWS region for hosting our your network"
-  default = "us-west-1"
+  default = "us-east-1"
 }
 variable "public_key_path" {
   description = "Enter the path to the SSH Public Key to add to AWS."
@@ -16,7 +16,7 @@ variable "key_name" {
 variable "amis" {
   description = "Base AMI to launch the instances"
   default = {
-  us-west-1 = "ami-0ee1a20d6b0c6a347"
+  us-east-1 = "ami-03e33c1cefd1d3d74"
   }
 }  
 variable "accessKey" {
