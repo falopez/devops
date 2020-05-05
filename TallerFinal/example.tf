@@ -37,20 +37,6 @@ resource "aws_launch_configuration" "example" {
     create_before_destroy = true
   }
 }
-## Creating AutoScaling Group
-resource "aws_autoscaling_group" "example" {
-  launch_configuration = "${aws_launch_configuration.example.id}"
-  availability_zones = ["${data.aws_availability_zones.all.names[0]}"]
-  min_size = 2
-  max_size = 4
-  load_balancers = ["${aws_elb.example.name}"]
-  health_check_type = "ELB"
-  tag {
-    key = "Name"
-    value = "terraform-asg-example"
-    propagate_at_launch = true
-  }
-}
 ## Security Group for ELB
 resource "aws_security_group" "elb" {
   name = "terraform-example-elb_5"
@@ -84,5 +70,19 @@ resource "aws_elb" "example" {
     lb_protocol = "http"
     instance_port = "8080"
     instance_protocol = "http"
+  }
+}
+## Creating AutoScaling Group
+resource "aws_autoscaling_group" "example" {
+  launch_configuration = "${aws_launch_configuration.example.id}"
+  availability_zones = ["${data.aws_availability_zones.all.names[0]}"]
+  min_size = 2
+  max_size = 4
+  load_balancers = ["${aws_elb.example.name}"]
+  health_check_type = "ELB"
+  tag {
+    key = "Name"
+    value = "terraform-asg-example"
+    propagate_at_launch = true
   }
 }
