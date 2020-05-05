@@ -21,9 +21,9 @@ variable "amis" {
 }  
 variable "accessKey" {
   description = "Access Key id"
-  default = "AKIAJ2PQZES5DJPBUBKQ"
+  default = " "
 }
 variable "secretAccessKey" {
   description = "Secret Access Key Id"
-  default = "mx1/Yf6mR2LQ34t2zha1b/zlgLpFtu9UMa5trDj4"
+  default = ""
 }
