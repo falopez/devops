@@ -16,7 +16,7 @@ variable "key_name" {
 variable "amis" {
   description = "Base AMI to launch the instances"
   default = {
-  ap-south-1 = "ami-8da8d2e2"
+  ap-south-1 = "ami-0ee1a20d6b0c6a347"
   }
 }  
 variable "accessKey" {

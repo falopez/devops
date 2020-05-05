@@ -53,7 +53,7 @@ resource "aws_autoscaling_group" "example" {
 }
 ## Security Group for ELB
 resource "aws_security_group" "elb" {
-  name = "terraform-example-elb_4"
+  name = "terraform-example-elb_5"
   egress {
     from_port = 0
     to_port = 0
